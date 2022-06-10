@@ -38,12 +38,13 @@ def WGANGPGradientPenalty(input, fake, discriminator, weight, backward=True):
 
     gradients = gradients[0].view(batchSize, -1)
     gradients = (gradients * gradients).sum(dim=1).sqrt()
-    gradient_penalty = (((gradients - 1.0)**2)).sum() * weight
+#    gradient_penalty = (((gradients - 1.0)**2)).sum() * weight
+    gradient_penalty = (((gradients - 1.0)**2)) * weight
 
     if backward:
         gradient_penalty.backward(retain_graph=True)
 
-    return gradient_penalty.item()
+    return gradient_penalty.view(batchSize, -1)#.item()
 
 
 def logisticGradientPenalty(input, discrimator, weight, backward=True):

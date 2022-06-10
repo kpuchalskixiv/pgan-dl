@@ -349,13 +349,15 @@ def WGANGP_loss(model, zi=None, xi=None, net=''):
         elif model.hparams.curr_res>xi.shape[-1]:
             ratio=model.hparams.curr_res//xi.shape[-1]
             xi=nn.Upsample(scale_factor=(ratio,ratio), mode='nearest')(xi)
-        d_loss_Grad = WGANGPGradientPenalty(xi,
+        d_loss_grad_penalty = WGANGPGradientPenalty(xi,
                                             gen_imgs,
                                             model.discriminator,
                                             10.0,
-                                            backward=True)
+                                            backward=False)
 
-        d_loss=torch.mean(loss_x+loss_z+lossEpsilon)
+    #    print(loss_x.shape,loss_z.shape,lossEpsilon.shape,d_loss_grad_penalty.shape)
+
+        d_loss=torch.mean(loss_x+loss_z+lossEpsilon+d_loss_grad_penalty)
         return d_loss
 
 def original_loss(model, zi=None, xi=None, net=''):
