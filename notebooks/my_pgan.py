@@ -239,13 +239,14 @@ class Generator(nn.Module):
         self.alpha=0.0
 
 class Discriminator(nn.Module):
-    def __init__(self, latent_size=512, final_res=32, device='cuda', normalize=True, activation_f=nn.LeakyReLU()):
+    def __init__(self, latent_size=512, final_res=32, device='cuda', normalize=True, activation_f=nn.LeakyReLU(), normalize_img=True):
         super().__init__()
         #self.save_hyperparameters()
         self.device=device
         self.curr_res=4
         self.final_res=final_res
         self.alpha=0.0
+        self.normalize_img=normalize_img
         self.res_chanel_dict={
                             4:512,
                             8:512,
@@ -272,14 +273,15 @@ class Discriminator(nn.Module):
                     self.f,
                     EqualizedConv2d(512,latent_size,  padding=0, kernelSize=(4,4)),
                     self.f,
-                    ])
-        self.decision_layer=nn.Sequential(EqualizedLinear(latent_size, 1))#, nn.Sigmoid())
+                    ]).to(self.device)
+        self.decision_layer=nn.Sequential(EqualizedLinear(latent_size, 1)).to(self.device)#, nn.Sigmoid())
         self.residual=None
 
     def forward(self, x, getFeature=False):
 
         #normalize both generated and training images
-        x=transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))(x)
+        if self.normalize_img:
+            x=transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))(x)
 
         if self.curr_res<x.shape[-1]:
             ratio=x.shape[-1]//self.curr_res
