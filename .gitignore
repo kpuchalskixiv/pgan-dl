@@ -1,6 +1,9 @@
 ##########################
 # KEDRO PROJECT
 
+#ignore todo file
+TODO.txt
+
 # ignore all local configuration
 conf/local/**
 !conf/local/.gitkeep
