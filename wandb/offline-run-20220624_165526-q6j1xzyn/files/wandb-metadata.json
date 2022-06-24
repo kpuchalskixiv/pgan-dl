@@ -1,0 +1,27 @@
+{
+    "os": "Linux-5.13.0-51-generic-x86_64-with-glibc2.31",
+    "python": "3.9.12",
+    "heartbeatAt": "2022-06-24T14:55:27.128485",
+    "startedAt": "2022-06-24T14:55:26.250513",
+    "docker": null,
+    "gpu": "NVIDIA GeForce MX150",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "run",
+        "--pipeline",
+        "model_training"
+    ],
+    "state": "running",
+    "program": "/home/guzik/miniconda3/envs/pgan/bin/kedro",
+    "git": {
+        "remote": "git@github.com:kpuchalskixiv/pgan-dl.git",
+        "commit": "9cb0d628ac7c08f9bd43f87a98442ae05c27c7b7"
+    },
+    "email": "karolguzikowski@gmail.com",
+    "root": "/home/guzik/Documents/studia/pgan-dl",
+    "host": "guzik-X510UNR",
+    "username": "guzik",
+    "executable": "/home/guzik/miniconda3/envs/pgan/bin/python"
+}

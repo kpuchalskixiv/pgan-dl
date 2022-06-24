@@ -1,0 +1,10 @@
+alpha: 0.0
+alpha_step: 0.004
+curr_res: 4
+device: cuda
+final_res: 32
+k: 1
+latent_size: 512
+lr: 0.0001
+normalize: true
+normalize_img: true

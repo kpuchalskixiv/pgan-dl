@@ -1,23 +1,11 @@
 import torch
 from torch import nn
-from pytorch_lightning import LightningModule
-import torchvision as tv
 from torchvision import transforms
 import torch.nn.functional as F
-import torch.utils.data as data_utils
 
-import pytorch_lightning as pl
-from pytorch_lightning import Trainer
-from torch.utils.data import DataLoader
-
-from collections import OrderedDict
-
-from custom_layers import EqualizedConv2d, EqualizedLinear,\
-    NormalizationLayer, Upscale2d
-from gradient_losses import WGANGPGradientPenalty
-
-from pytorch_lightning.loggers import WandbLogger
-import wandb
+from .custom_layers import EqualizedConv2d, EqualizedLinear,\
+    NormalizationLayer
+from .gradient_losses import WGANGPGradientPenalty
 
 
 class Gen_residual(nn.Module):
