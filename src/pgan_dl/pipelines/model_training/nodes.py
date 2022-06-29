@@ -13,6 +13,9 @@ from ...src.my_pgan import WGANGP_loss
 import pytorch_lightning as pl
 
 
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+
 def create_data_loader(input_dir: str, batch_size: int, num_workers: int) -> DataLoader:
     """
     Creates pytorch data loader from places365 dataset
@@ -81,7 +84,8 @@ def initialize(
         final_res=final_res,
         activation_f=nn.LeakyReLU(negative_slope=negative_slope),
         alpha_step=alpha_step,
-        loss_f=WGANGP_loss
+        loss_f=WGANGP_loss,
+        device=device
     )
 
     dataloader = create_data_loader(input_dir=input_dir, batch_size=batch_size, num_workers=num_workers)
@@ -96,7 +100,7 @@ def train_model(
     checkpoint_path: str,
     loger_entity: str,
     loger_name: str,
-) -> PGAN:
+) -> Tuple[PGAN, DataLoader]:
     """Trains the model
     :param model: Model object created with initialize()
     :type model: PlacesModel
@@ -111,8 +115,8 @@ def train_model(
     :param loger_name: WandDB loger name
     :type loger_name: str
 
-    :return: A trained model
-    :rtype: PGAN
+    :return: A trained model alongside dataloader
+    :rtype: Tuple[PGAN, torch.utils.data.DataLoader]
     """
     wandb.init()
     wandb_logger = WandbLogger(project="PGAN",  name=loger_name, entity=loger_entity)

@@ -11,3 +11,4 @@ max_epochs: 2500
 checkpoint_path: data/06_models/
 loger_entity: dl_image_classification
 loger_name: locally_airplanes_continue_32
+generated_samples_no: 10

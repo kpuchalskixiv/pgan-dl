@@ -34,7 +34,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                 "params:loger_entity",
                 "params:loger_name",
             ],
-            ['trained_model'],
+            ['trained_model', 'train_dataloader'],
             name='train_model'
         )
     ])
