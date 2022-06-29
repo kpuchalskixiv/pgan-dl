@@ -12,6 +12,7 @@ from ...src.model import PGAN
 from ...src.my_pgan import WGANGP_loss
 import pytorch_lightning as pl
 
+
 def create_data_loader(input_dir: str, batch_size: int, num_workers: int) -> DataLoader:
     """
     Creates pytorch data loader from places365 dataset
@@ -79,7 +80,7 @@ def initialize(
         latent_size=latent_size,
         final_res=final_res,
         activation_f=nn.LeakyReLU(negative_slope=negative_slope),
-        alpha_step=alpha_step,  # 500 epochs on 4v4, 1k on both 8x8 and 16x16
+        alpha_step=alpha_step,
         loss_f=WGANGP_loss
     )
 
@@ -122,10 +123,10 @@ def train_model(
         precision=16,
         max_epochs=max_epochs,
         logger=wandb_logger,
-        callbacks=[pl.callbacks.ModelCheckpoint(filepath=checkpoint_path)]
+        callbacks=[pl.callbacks.ModelCheckpoint(dirpath=checkpoint_path)]
     )
     trainer.fit(model, dataloader)
 
     wandb.finish()
 
-    return model
+    return model, dataloader
