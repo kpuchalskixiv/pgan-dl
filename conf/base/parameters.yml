@@ -4,13 +4,12 @@ latent_size: 512
 final_res: 32
 negative_slope: 0.2
 alpha_step: 0.004
-batch_size: 1
+batch_size: 16
 lr: 0.0001
 num_workers: 4
-max_epochs: 1
+max_epochs: 2000
 checkpoint_path: data/06_models/
 loger_entity: dl_image_classification
 loger_name: locally_airplanes
 generated_samples_no: 10
-load_model: False
-model_path: data/06_models/no_img_norm_32.ckpt
+model_path: data/06_models/your_model.ckpt
