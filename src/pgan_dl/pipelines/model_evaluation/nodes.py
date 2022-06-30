@@ -94,6 +94,9 @@ def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int, bat
     :param batch_size: Number of images in a batch
     :type batch_size: int
     """
+    model.to(device)
+    model.generator.to(device)
+    model.generator.eval()
     inception = prepare_inception_embedder()
 
     #batch_size = 4
@@ -101,9 +104,6 @@ def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int, bat
     # compute embeddings for real images
     real_image_embeddings = compute_embeddings(inception, dataloader)
 
-    model.to(device)
-    model.generator.to(device)
-    model.generator.eval()
     # compute embeddings for generated images
     gen_dataset = LatentVectorDataset(generated_samples_no)
     gen_dataloader = DataLoader(gen_dataset, batch_size=batch_size)
