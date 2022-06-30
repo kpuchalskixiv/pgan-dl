@@ -14,7 +14,7 @@ import pytorch_lightning as pl
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
+torch.multiprocessing.set_sharing_strategy('file_system')
 
 def create_data_loader(input_dir: str, batch_size: int, num_workers: int) -> DataLoader:
     """
@@ -118,8 +118,8 @@ def train_model(
     :return: A trained model alongside dataloader
     :rtype: Tuple[PGAN, torch.utils.data.DataLoader]
     """
-    wandb.init()
-    wandb_logger = WandbLogger(project="PGAN",  name=loger_name, entity=loger_entity)
+    #wandb.init()
+    wandb_logger = WandbLogger(project="PGAN",  entity=loger_entity, name=loger_name)
     gpu_devices = 1 if torch.cuda.is_available() else 0
 
     trainer = pl.Trainer(

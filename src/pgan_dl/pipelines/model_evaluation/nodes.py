@@ -82,7 +82,7 @@ def prepare_inception_embedder():
     return model
 
 
-def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int):
+def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int, batch_size: int):
     """Computes a FID score on given dataset
 
     :param model: pre-trained PGAN model
@@ -91,17 +91,19 @@ def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int):
     :type dataloader: torch.utils.data.DataLoader
     :param generated_samples_no: number of samples to be generated and used for evaluation
     :type generated_samples_no: int
+    :param batch_size: Number of images in a batch
+    :type batch_size: int
     """
-    model.to(device)
-    model.generator.to(device)
-    model.generator.eval()
     inception = prepare_inception_embedder()
 
-    batch_size = 64
+    #batch_size = 4
 
     # compute embeddings for real images
     real_image_embeddings = compute_embeddings(inception, dataloader)
 
+    model.to(device)
+    model.generator.to(device)
+    model.generator.eval()
     # compute embeddings for generated images
     gen_dataset = LatentVectorDataset(generated_samples_no)
     gen_dataloader = DataLoader(gen_dataset, batch_size=batch_size)

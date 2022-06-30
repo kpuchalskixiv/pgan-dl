@@ -104,7 +104,7 @@ class PGAN(pl.LightningModule):
                 0.5 / self.hparams.alpha_step) or self.hparams.curr_res > 4:  # first run X epochs on 4x4
             if self.hparams.alpha == 0 and self.hparams.curr_res < self.hparams.final_res:
 
-                self.save_generated_images()
+                self.save_generated_images('data/07_model_output/')
 
                 self.hparams.curr_res *= 2
                 #  if self.hparams.curr_res==32:
