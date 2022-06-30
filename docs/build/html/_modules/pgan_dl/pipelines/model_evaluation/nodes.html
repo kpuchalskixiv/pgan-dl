@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pgan_dl.pipelines.model_evaluation.nodes &mdash; pgan_dl 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/qb1-sphinx-rtd.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/theme-overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> pgan_dl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">pgan_dl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pgan_dl.html">pgan_dl package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../pgan_dl.pipelines.html">pgan_dl.pipelines package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../pgan_dl.src.html">pgan_dl.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#module-pgan_dl.pipeline_registry">pgan_dl.pipeline_registry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#module-pgan_dl.settings">pgan_dl.settings module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pgan_dl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pgan_dl.pipelines.model_evaluation.nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pgan_dl.pipelines.model_evaluation.nodes</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">import</span> <span class="nn">torchvision</span> <span class="k">as</span> <span class="nn">tv</span>
+<span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">data_utils</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">...src.model</span> <span class="kn">import</span> <span class="n">PGAN</span><span class="p">,</span> <span class="n">PGAN_loaded</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span>
+
+
+<span class="n">preprocess</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToPILImage</span><span class="p">(),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">299</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">299</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]),</span>
+<span class="p">])</span>
+
+
+<div class="viewcode-block" id="Identity"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.Identity">[docs]</a><span class="k">class</span> <span class="nc">Identity</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Identity.__init__"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.Identity.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Identity</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Identity.forward"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.Identity.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span></div></div>
+
+
+<div class="viewcode-block" id="LatentVectorDataset"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.LatentVectorDataset">[docs]</a><span class="k">class</span> <span class="nc">LatentVectorDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+<div class="viewcode-block" id="LatentVectorDataset.__init__"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.LatentVectorDataset.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samples_no</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">samples_no</span> <span class="o">=</span> <span class="n">samples_no</span></div>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples_no</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">512</span><span class="p">),</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="compute_embeddings"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.compute_embeddings">[docs]</a><span class="k">def</span> <span class="nf">compute_embeddings</span><span class="p">(</span><span class="n">inception</span><span class="p">,</span> <span class="n">dataloader</span><span class="p">,</span> <span class="n">pgan</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="n">pgan</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span> <span class="k">if</span> <span class="n">pgan</span> <span class="k">else</span> <span class="n">batch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">preprocessed</span> <span class="o">=</span> <span class="p">[</span><span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">]</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">preprocessed</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="n">inception</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="calculate_fid"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.calculate_fid">[docs]</a><span class="k">def</span> <span class="nf">calculate_fid</span><span class="p">(</span><span class="n">real_embeddings</span><span class="p">,</span> <span class="n">generated_embeddings</span><span class="p">):</span>
+    <span class="c1"># calculate mean and covariance statistics</span>
+    <span class="n">mu1</span><span class="p">,</span> <span class="n">sigma1</span> <span class="o">=</span> <span class="n">real_embeddings</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">real_embeddings</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">mu2</span><span class="p">,</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">generated_embeddings</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">generated_embeddings</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># calculate sum squared difference between means</span>
+    <span class="n">ssdiff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">mu1</span> <span class="o">-</span> <span class="n">mu2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span>
+
+    <span class="c1"># calculate sqrt of product between cov</span>
+    <span class="n">covmean</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">sqrtm</span><span class="p">(</span><span class="n">sigma1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">sigma2</span><span class="p">))</span>
+
+    <span class="c1"># check and correct imaginary numbers from sqrt</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">iscomplexobj</span><span class="p">(</span><span class="n">covmean</span><span class="p">):</span>
+        <span class="n">covmean</span> <span class="o">=</span> <span class="n">covmean</span><span class="o">.</span><span class="n">real</span>
+
+    <span class="c1"># calculate score</span>
+    <span class="n">fid</span> <span class="o">=</span> <span class="n">ssdiff</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">sigma1</span> <span class="o">+</span> <span class="n">sigma2</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">covmean</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fid</span></div>
+
+
+<div class="viewcode-block" id="prepare_inception_embedder"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.prepare_inception_embedder">[docs]</a><span class="k">def</span> <span class="nf">prepare_inception_embedder</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;pytorch/vision:v0.10.0&#39;</span><span class="p">,</span> <span class="s1">&#39;inception_v3&#39;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">Identity</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">model</span></div>
+
+<div class="viewcode-block" id="create_data_loader"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.create_data_loader">[docs]</a><span class="k">def</span> <span class="nf">create_data_loader</span><span class="p">(</span><span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_workers</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates pytorch data loader from places365 dataset</span>
+<span class="sd">    :param input_dir: Path to the root of the dataset</span>
+<span class="sd">    :type input_dir: str</span>
+<span class="sd">    :param batch_size: Number of images in a batch</span>
+<span class="sd">    :type batch_size: int</span>
+<span class="sd">    :param num_workers: How many subprocesses are used for data loading</span>
+<span class="sd">    :type num_workers: int</span>
+<span class="sd">    :return: Data loader for the dataset</span>
+<span class="sd">    :rtype: torch.utils.data.DataLoader</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_train</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">tv</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()),</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span>
+    <span class="p">)</span>
+
+    <span class="n">oneclass_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data_train</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">labels</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">oneclass_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">data_utils</span><span class="o">.</span><span class="n">TensorDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">oneclass_data</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oneclass_data</span><span class="p">))),</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span></div>
+
+
+<span class="c1">#def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int, batch_size: int):</span>
+<div class="viewcode-block" id="evaluate"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_evaluation.html#pgan_dl.pipelines.model_evaluation.nodes.evaluate">[docs]</a><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">generated_samples_no</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_workers</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Computes a FID score on given dataset</span>
+
+<span class="sd">    :param model: pre-trained PGAN model</span>
+<span class="sd">    :type model: PGAN</span>
+<span class="sd">    :param dataloader: dataloader used for training</span>
+<span class="sd">    :type dataloader: torch.utils.data.DataLoader</span>
+<span class="sd">    :param generated_samples_no: number of samples to be generated and used for evaluation</span>
+<span class="sd">    :type generated_samples_no: int</span>
+<span class="sd">    :param batch_size: Number of images in a batch</span>
+<span class="sd">    :type batch_size: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">PGAN_loaded</span><span class="o">.</span><span class="n">load_from_checkpoint</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">dataloader</span> <span class="o">=</span> <span class="n">create_data_loader</span><span class="p">(</span><span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">)</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">inception</span> <span class="o">=</span> <span class="n">prepare_inception_embedder</span><span class="p">()</span>
+
+    <span class="c1"># compute embeddings for real images</span>
+    <span class="n">real_image_embeddings</span> <span class="o">=</span> <span class="n">compute_embeddings</span><span class="p">(</span><span class="n">inception</span><span class="p">,</span> <span class="n">dataloader</span><span class="p">)</span>
+
+    <span class="c1"># compute embeddings for generated images</span>
+    <span class="n">gen_dataset</span> <span class="o">=</span> <span class="n">LatentVectorDataset</span><span class="p">(</span><span class="n">generated_samples_no</span><span class="p">)</span>
+    <span class="n">gen_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">gen_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+
+    <span class="n">generated_image_embeddings</span> <span class="o">=</span> <span class="n">compute_embeddings</span><span class="p">(</span><span class="n">inception</span><span class="p">,</span> <span class="n">gen_dataloader</span><span class="p">,</span> <span class="n">pgan</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+
+    <span class="n">fid</span> <span class="o">=</span> <span class="n">calculate_fid</span><span class="p">(</span><span class="n">real_image_embeddings</span><span class="p">,</span> <span class="n">generated_image_embeddings</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;FID: </span><span class="si">{</span><span class="n">fid</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fid</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

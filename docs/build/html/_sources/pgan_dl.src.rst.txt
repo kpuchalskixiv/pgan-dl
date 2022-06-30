@@ -1,0 +1,42 @@
+pgan\_dl.src package
+====================
+
+.. automodule:: pgan_dl.src
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+pgan\_dl.src.custom\_layers module
+----------------------------------
+
+.. automodule:: pgan_dl.src.custom_layers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.src.gradient\_losses module
+------------------------------------
+
+.. automodule:: pgan_dl.src.gradient_losses
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.src.model module
+-------------------------
+
+.. automodule:: pgan_dl.src.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.src.my\_pgan module
+----------------------------
+
+.. automodule:: pgan_dl.src.my_pgan
+   :members:
+   :undoc-members:
+   :show-inheritance:

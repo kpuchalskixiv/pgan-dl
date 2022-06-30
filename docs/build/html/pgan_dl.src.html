@@ -1,0 +1,1039 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pgan_dl.src package &mdash; pgan_dl 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/qb1-sphinx-rtd.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/theme-overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pgan_dl.pipelines.model_training package" href="pgan_dl.pipelines.model_training.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pgan_dl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pgan_dl</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pgan_dl.html">pgan_dl package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pgan_dl.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pgan_dl.pipelines.html">pgan_dl.pipelines package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">pgan_dl.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pgan_dl.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pgan_dl.html#module-pgan_dl.pipeline_registry">pgan_dl.pipeline_registry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pgan_dl.html#module-pgan_dl.settings">pgan_dl.settings module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pgan_dl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">pgan_dl</a> &raquo;</li>
+        
+          <li><a href="pgan_dl.html">pgan_dl package</a> &raquo;</li>
+        
+      <li>pgan_dl.src package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-pgan_dl.src">
+<span id="pgan-dl-src-package"></span><h1>pgan_dl.src package<a class="headerlink" href="#module-pgan_dl.src" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pgan_dl.src.custom_layers">
+<span id="pgan-dl-src-custom-layers-module"></span><h2>pgan_dl.src.custom_layers module<a class="headerlink" href="#module-pgan_dl.src.custom_layers" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pgan_dl.src.custom_layers.ConstrainedLayer">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.custom_layers.</code><code class="sig-name descname">ConstrainedLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">equalized</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">lrMul</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">initBiasToZero</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#ConstrainedLayer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.ConstrainedLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>A handy refactor that allows the user to:
+- initialize one layer’s bias to zero
+- apply He’s initialization at runtime</p>
+<dl class="py method">
+<dt id="pgan_dl.src.custom_layers.ConstrainedLayer.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">equalized</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">lrMul</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">initBiasToZero</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#ConstrainedLayer.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.ConstrainedLayer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>equalized (bool): if true, the layer’s weight should evolve within</dt><dd><p>the range (-1, 1)</p>
+</dd>
+</dl>
+<p>initBiasToZero (bool): if true, bias will be initialized to zero</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.custom_layers.ConstrainedLayer.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#ConstrainedLayer.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.ConstrainedLayer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.custom_layers.ConstrainedLayer.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.custom_layers.ConstrainedLayer.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.custom_layers.EqualizedConv2d">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.custom_layers.</code><code class="sig-name descname">EqualizedConv2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nChannelsPrevious</span></em>, <em class="sig-param"><span class="n">nChannels</span></em>, <em class="sig-param"><span class="n">kernelSize</span></em>, <em class="sig-param"><span class="n">padding</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">bias</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#EqualizedConv2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.EqualizedConv2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pgan_dl.src.custom_layers.ConstrainedLayer" title="pgan_dl.src.custom_layers.ConstrainedLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pgan_dl.src.custom_layers.ConstrainedLayer</span></code></a></p>
+<dl class="py method">
+<dt id="pgan_dl.src.custom_layers.EqualizedConv2d.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nChannelsPrevious</span></em>, <em class="sig-param"><span class="n">nChannels</span></em>, <em class="sig-param"><span class="n">kernelSize</span></em>, <em class="sig-param"><span class="n">padding</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">bias</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#EqualizedConv2d.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.EqualizedConv2d.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A nn.Conv2d module with specific constraints
+:param nChannelsPrevious: number of channels in the previous layer
+:type nChannelsPrevious: int
+:param nChannels: number of channels of the current layer
+:type nChannels: int
+:param kernelSize: size of the convolutional kernel
+:type kernelSize: int
+:param padding: convolution’s padding
+:type padding: int
+:param bias: with bias ?
+:type bias: bool</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.custom_layers.EqualizedConv2d.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.custom_layers.EqualizedConv2d.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.custom_layers.EqualizedLinear">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.custom_layers.</code><code class="sig-name descname">EqualizedLinear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nChannelsPrevious</span></em>, <em class="sig-param"><span class="n">nChannels</span></em>, <em class="sig-param"><span class="n">bias</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#EqualizedLinear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.EqualizedLinear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pgan_dl.src.custom_layers.ConstrainedLayer" title="pgan_dl.src.custom_layers.ConstrainedLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pgan_dl.src.custom_layers.ConstrainedLayer</span></code></a></p>
+<dl class="py method">
+<dt id="pgan_dl.src.custom_layers.EqualizedLinear.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nChannelsPrevious</span></em>, <em class="sig-param"><span class="n">nChannels</span></em>, <em class="sig-param"><span class="n">bias</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#EqualizedLinear.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.EqualizedLinear.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A nn.Linear module with specific constraints
+:param nChannelsPrevious: number of channels in the previous layer
+:type nChannelsPrevious: int
+:param nChannels: number of channels of the current layer
+:type nChannels: int
+:param bias: with bias ?
+:type bias: bool</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.custom_layers.EqualizedLinear.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.custom_layers.EqualizedLinear.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.custom_layers.NormalizationLayer">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.custom_layers.</code><code class="sig-name descname">NormalizationLayer</code><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#NormalizationLayer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.NormalizationLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.custom_layers.NormalizationLayer.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#NormalizationLayer.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.NormalizationLayer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.custom_layers.NormalizationLayer.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">epsilon</span><span class="o">=</span><span class="default_value">1e-08</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#NormalizationLayer.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.NormalizationLayer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.custom_layers.NormalizationLayer.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.custom_layers.NormalizationLayer.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.custom_layers.Upscale2d">
+<code class="sig-prename descclassname">pgan_dl.src.custom_layers.</code><code class="sig-name descname">Upscale2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">factor</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#Upscale2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.Upscale2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.custom_layers.getLayerNormalizationFactor">
+<code class="sig-prename descclassname">pgan_dl.src.custom_layers.</code><code class="sig-name descname">getLayerNormalizationFactor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/custom_layers.html#getLayerNormalizationFactor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.custom_layers.getLayerNormalizationFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get He’s constant for the given layer
+<a class="reference external" href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/He_Delving_Deep_into_ICCV_2015_paper.pdf">https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/He_Delving_Deep_into_ICCV_2015_paper.pdf</a></p>
+</dd></dl>
+
+</section>
+<section id="module-pgan_dl.src.gradient_losses">
+<span id="pgan-dl-src-gradient-losses-module"></span><h2>pgan_dl.src.gradient_losses module<a class="headerlink" href="#module-pgan_dl.src.gradient_losses" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pgan_dl.src.gradient_losses.WGANGPGradientPenalty">
+<code class="sig-prename descclassname">pgan_dl.src.gradient_losses.</code><code class="sig-name descname">WGANGPGradientPenalty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">fake</span></em>, <em class="sig-param"><span class="n">discriminator</span></em>, <em class="sig-param"><span class="n">weight</span></em>, <em class="sig-param"><span class="n">backward</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/gradient_losses.html#WGANGPGradientPenalty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.gradient_losses.WGANGPGradientPenalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gradient penalty as described in
+“Improved Training of Wasserstein GANs”
+<a class="reference external" href="https://arxiv.org/pdf/1704.00028.pdf">https://arxiv.org/pdf/1704.00028.pdf</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>-</em>) – batch of real data</p></li>
+<li><p><strong>fake</strong> (<em>-</em>) – batch of generated data. Must have the same size
+as the input</p></li>
+<li><p><strong>discrimator</strong> (<em>-</em>) – discriminator network</p></li>
+<li><p><strong>weight</strong> (<em>-</em>) – weight to apply to the penalty term</p></li>
+<li><p><strong>backward</strong> (<em>-</em>) – loss backpropagation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.gradient_losses.logisticGradientPenalty">
+<code class="sig-prename descclassname">pgan_dl.src.gradient_losses.</code><code class="sig-name descname">logisticGradientPenalty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="n">discrimator</span></em>, <em class="sig-param"><span class="n">weight</span></em>, <em class="sig-param"><span class="n">backward</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/gradient_losses.html#logisticGradientPenalty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.gradient_losses.logisticGradientPenalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gradient penalty described in “Which training method of GANs actually
+converge
+<a class="reference external" href="https://arxiv.org/pdf/1801.04406.pdf">https://arxiv.org/pdf/1801.04406.pdf</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>-</em>) – batch of real data</p></li>
+<li><p><strong>discrimator</strong> (<em>-</em>) – discriminator network</p></li>
+<li><p><strong>weight</strong> (<em>-</em>) – weight to apply to the penalty term</p></li>
+<li><p><strong>backward</strong> (<em>-</em>) – loss backpropagation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pgan_dl.src.model">
+<span id="pgan-dl-src-model-module"></span><h2>pgan_dl.src.model module<a class="headerlink" href="#module-pgan_dl.src.model" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pgan_dl.src.model.PGAN">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.model.</code><code class="sig-name descname">PGAN</code><span class="sig-paren">(</span><em class="sig-param">lr=0.1</em>, <em class="sig-param">latent_size=512</em>, <em class="sig-param">final_res=32</em>, <em class="sig-param">curr_res=4</em>, <em class="sig-param">k=1</em>, <em class="sig-param">alpha=0.0</em>, <em class="sig-param">alpha_step=0.1</em>, <em class="sig-param">loss_f=&lt;function WGANGP_loss&gt;</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">activation_f=LeakyReLU(negative_slope=0.2)</em>, <em class="sig-param">device='cuda'</em>, <em class="sig-param">normalize_img=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pytorch_lightning.core.lightning.LightningModule</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">lr=0.1</em>, <em class="sig-param">latent_size=512</em>, <em class="sig-param">final_res=32</em>, <em class="sig-param">curr_res=4</em>, <em class="sig-param">k=1</em>, <em class="sig-param">alpha=0.0</em>, <em class="sig-param">alpha_step=0.1</em>, <em class="sig-param">loss_f=&lt;function WGANGP_loss&gt;</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">activation_f=LeakyReLU(negative_slope=0.2)</em>, <em class="sig-param">device='cuda'</em>, <em class="sig-param">normalize_img=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.configure_optimizers">
+<code class="sig-name descname">configure_optimizers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.configure_optimizers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.configure_optimizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose what optimizers and learning-rate schedulers to use in your optimization.
+Normally you’d need one. But in the case of GANs or similar you might have multiple.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Any of these 6 options.</p>
+<ul class="simple">
+<li><p><strong>Single optimizer</strong>.</p></li>
+<li><p><strong>List or Tuple</strong> of optimizers.</p></li>
+<li><p><strong>Two lists</strong> - The first list has multiple optimizers, and the second has multiple LR schedulers
+(or multiple <code class="docutils literal notranslate"><span class="pre">lr_scheduler_config</span></code>).</p></li>
+<li><p><strong>Dictionary</strong>, with an <code class="docutils literal notranslate"><span class="pre">&quot;optimizer&quot;</span></code> key, and (optionally) a <code class="docutils literal notranslate"><span class="pre">&quot;lr_scheduler&quot;</span></code>
+key whose value is a single LR scheduler or <code class="docutils literal notranslate"><span class="pre">lr_scheduler_config</span></code>.</p></li>
+<li><p><strong>Tuple of dictionaries</strong> as described above, with an optional <code class="docutils literal notranslate"><span class="pre">&quot;frequency&quot;</span></code> key.</p></li>
+<li><p><strong>None</strong> - Fit will run without any optimizer.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">lr_scheduler_config</span></code> is a dictionary which contains the scheduler and its associated configuration.
+The default configuration is shown below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lr_scheduler_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># REQUIRED: The scheduler instance</span>
+    <span class="s2">&quot;scheduler&quot;</span><span class="p">:</span> <span class="n">lr_scheduler</span><span class="p">,</span>
+    <span class="c1"># The unit of the scheduler&#39;s step size, could also be &#39;step&#39;.</span>
+    <span class="c1"># &#39;epoch&#39; updates the scheduler on epoch end whereas &#39;step&#39;</span>
+    <span class="c1"># updates it after a optimizer update.</span>
+    <span class="s2">&quot;interval&quot;</span><span class="p">:</span> <span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
+    <span class="c1"># How many epochs/steps should pass between calls to</span>
+    <span class="c1"># `scheduler.step()`. 1 corresponds to updating the learning</span>
+    <span class="c1"># rate after every epoch/step.</span>
+    <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="c1"># Metric to to monitor for schedulers like `ReduceLROnPlateau`</span>
+    <span class="s2">&quot;monitor&quot;</span><span class="p">:</span> <span class="s2">&quot;val_loss&quot;</span><span class="p">,</span>
+    <span class="c1"># If set to `True`, will enforce that the value specified &#39;monitor&#39;</span>
+    <span class="c1"># is available when the scheduler is updated, thus stopping</span>
+    <span class="c1"># training if not found. If set to `False`, it will only produce a warning</span>
+    <span class="s2">&quot;strict&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="c1"># If using the `LearningRateMonitor` callback to monitor the</span>
+    <span class="c1"># learning rate progress, this keyword can be used to specify</span>
+    <span class="c1"># a custom logged name</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When there are schedulers in which the <code class="docutils literal notranslate"><span class="pre">.step()</span></code> method is conditioned on a value, such as the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">torch.optim.lr_scheduler.ReduceLROnPlateau</span></code> scheduler, Lightning requires that the
+<code class="docutils literal notranslate"><span class="pre">lr_scheduler_config</span></code> contains the keyword <code class="docutils literal notranslate"><span class="pre">&quot;monitor&quot;</span></code> set to the metric name that the scheduler
+should be conditioned on.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The ReduceLROnPlateau scheduler requires a monitor</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">optimizer</span><span class="p">,</span>
+        <span class="s2">&quot;lr_scheduler&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;scheduler&quot;</span><span class="p">:</span> <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span>
+            <span class="s2">&quot;monitor&quot;</span><span class="p">:</span> <span class="s2">&quot;metric_to_track&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;indicates how often the metric is updated&quot;</span>
+            <span class="c1"># If &quot;monitor&quot; references validation metrics, then &quot;frequency&quot; should be set to a</span>
+            <span class="c1"># multiple of &quot;trainer.check_val_every_n_epoch&quot;.</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+
+<span class="c1"># In the case of two optimizers, only one using the ReduceLROnPlateau scheduler</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">optimizer1</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">optimizer2</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">scheduler1</span> <span class="o">=</span> <span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">optimizer1</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+    <span class="n">scheduler2</span> <span class="o">=</span> <span class="n">LambdaLR</span><span class="p">(</span><span class="n">optimizer2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">optimizer1</span><span class="p">,</span>
+            <span class="s2">&quot;lr_scheduler&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;scheduler&quot;</span><span class="p">:</span> <span class="n">scheduler1</span><span class="p">,</span>
+                <span class="s2">&quot;monitor&quot;</span><span class="p">:</span> <span class="s2">&quot;metric_to_track&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">optimizer2</span><span class="p">,</span> <span class="s2">&quot;lr_scheduler&quot;</span><span class="p">:</span> <span class="n">scheduler2</span><span class="p">},</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Metrics can be made available to monitor by simply logging it using
+<code class="docutils literal notranslate"><span class="pre">self.log('metric_to_track',</span> <span class="pre">metric_val)</span></code> in your <code class="xref py py-class docutils literal notranslate"><span class="pre">LightningModule</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">frequency</span></code> value specified in a dict along with the <code class="docutils literal notranslate"><span class="pre">optimizer</span></code> key is an int corresponding
+to the number of sequential batches optimized with the specific optimizer.
+It should be given to none or to all of the optimizers.
+There is a difference between passing multiple optimizers in a list,
+and passing multiple optimizers in dictionaries with a frequency of 1:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>In the former case, all optimizers will operate on the given batch in each optimization step.</p></li>
+<li><p>In the latter, only one optimizer will operate on the given batch at every step.</p></li>
+</ul>
+</div></blockquote>
+<p>This is different from the <code class="docutils literal notranslate"><span class="pre">frequency</span></code> value specified in the <code class="docutils literal notranslate"><span class="pre">lr_scheduler_config</span></code> mentioned above.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">optimizer_one</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">optimizer_two</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">optimizer_one</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;optimizer&quot;</span><span class="p">:</span> <span class="n">optimizer_two</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>In this example, the first optimizer will be used for the first 5 steps,
+the second optimizer for the next 10 steps and that cycle will continue.
+If an LR scheduler is specified for an optimizer using the <code class="docutils literal notranslate"><span class="pre">lr_scheduler</span></code> key in the above dict,
+the scheduler will only be updated when its optimizer is being used.</p>
+</div>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># most cases. no learning rate scheduler</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+
+<span class="c1"># multiple optimizer case (e.g.: GAN)</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">gen_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_gen</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">dis_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dis</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gen_opt</span><span class="p">,</span> <span class="n">dis_opt</span>
+
+<span class="c1"># example with learning rate schedulers</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">gen_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_gen</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">dis_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dis</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+    <span class="n">dis_sch</span> <span class="o">=</span> <span class="n">CosineAnnealing</span><span class="p">(</span><span class="n">dis_opt</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">gen_opt</span><span class="p">,</span> <span class="n">dis_opt</span><span class="p">],</span> <span class="p">[</span><span class="n">dis_sch</span><span class="p">]</span>
+
+<span class="c1"># example with step-based learning rate schedulers</span>
+<span class="c1"># each optimizer has its own scheduler</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">gen_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_gen</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">dis_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dis</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+    <span class="n">gen_sch</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;scheduler&#39;</span><span class="p">:</span> <span class="n">ExponentialLR</span><span class="p">(</span><span class="n">gen_opt</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">),</span>
+        <span class="s1">&#39;interval&#39;</span><span class="p">:</span> <span class="s1">&#39;step&#39;</span>  <span class="c1"># called after each training step</span>
+    <span class="p">}</span>
+    <span class="n">dis_sch</span> <span class="o">=</span> <span class="n">CosineAnnealing</span><span class="p">(</span><span class="n">dis_opt</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># called every epoch</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">gen_opt</span><span class="p">,</span> <span class="n">dis_opt</span><span class="p">],</span> <span class="p">[</span><span class="n">gen_sch</span><span class="p">,</span> <span class="n">dis_sch</span><span class="p">]</span>
+
+<span class="c1"># example with optimizer frequencies</span>
+<span class="c1"># see training procedure in `Improved Training of Wasserstein GANs`, Algorithm 1</span>
+<span class="c1"># https://arxiv.org/abs/1704.00028</span>
+<span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">gen_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_gen</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">dis_opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dis</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+    <span class="n">n_critic</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">{</span><span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="n">dis_opt</span><span class="p">,</span> <span class="s1">&#39;frequency&#39;</span><span class="p">:</span> <span class="n">n_critic</span><span class="p">},</span>
+        <span class="p">{</span><span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="n">gen_opt</span><span class="p">,</span> <span class="s1">&#39;frequency&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some things to know:</p>
+<ul class="simple">
+<li><p>Lightning calls <code class="docutils literal notranslate"><span class="pre">.backward()</span></code> and <code class="docutils literal notranslate"><span class="pre">.step()</span></code> on each optimizer and learning rate scheduler as needed.</p></li>
+<li><p>If you use 16-bit precision (<code class="docutils literal notranslate"><span class="pre">precision=16</span></code>), Lightning will automatically handle the optimizers.</p></li>
+<li><p>If you use multiple optimizers, <a class="reference internal" href="#pgan_dl.src.model.PGAN.training_step" title="pgan_dl.src.model.PGAN.training_step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">training_step()</span></code></a> will have an additional <code class="docutils literal notranslate"><span class="pre">optimizer_idx</span></code> parameter.</p></li>
+<li><p>If you use <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.optim.LBFGS</span></code>, Lightning handles the closure function automatically for you.</p></li>
+<li><p>If you use multiple optimizers, gradients will be calculated only for the parameters of current optimizer
+at each training step.</p></li>
+<li><p>If you need to control how often those optimizers step or override the default <code class="docutils literal notranslate"><span class="pre">.step()</span></code> schedule,
+override the <a class="reference internal" href="#pgan_dl.src.model.PGAN.optimizer_step" title="pgan_dl.src.model.PGAN.optimizer_step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">optimizer_step()</span></code></a> hook.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <code class="xref py py-meth docutils literal notranslate"><span class="pre">torch.nn.Module.forward()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> – Whatever you decide to pass into the forward method.</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments are also possible.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Your model’s output</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.on_train_epoch_end">
+<code class="sig-name descname">on_train_epoch_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.on_train_epoch_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.on_train_epoch_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called in the training loop at the very end of the epoch.</p>
+<p>To access all batch outputs at the end of the epoch, either:</p>
+<ol class="arabic simple">
+<li><p>Implement <cite>training_epoch_end</cite> in the LightningModule OR</p></li>
+<li><p>Cache data across steps on the attribute(s) of the <cite>LightningModule</cite> and access them in this hook</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.optimizer_step">
+<code class="sig-name descname">optimizer_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epoch</span></em>, <em class="sig-param"><span class="n">batch_idx</span></em>, <em class="sig-param"><span class="n">optimizer</span></em>, <em class="sig-param"><span class="n">optimizer_idx</span></em>, <em class="sig-param"><span class="n">optimizer_closure</span></em>, <em class="sig-param"><span class="n">on_tpu</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">using_native_amp</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">using_lbfgs</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.optimizer_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.optimizer_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this method to adjust the default way the <code class="xref py py-class docutils literal notranslate"><span class="pre">Trainer</span></code> calls
+each optimizer.</p>
+<p>By default, Lightning calls <code class="docutils literal notranslate"><span class="pre">step()</span></code> and <code class="docutils literal notranslate"><span class="pre">zero_grad()</span></code> as shown in the example once per optimizer.
+This method (and <code class="docutils literal notranslate"><span class="pre">zero_grad()</span></code>) won’t be called during the accumulation phase when
+<code class="docutils literal notranslate"><span class="pre">Trainer(accumulate_grad_batches</span> <span class="pre">!=</span> <span class="pre">1)</span></code>. Overriding this hook has no benefit with manual optimization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epoch</strong> – Current epoch</p></li>
+<li><p><strong>batch_idx</strong> – Index of current batch</p></li>
+<li><p><strong>optimizer</strong> – A PyTorch optimizer</p></li>
+<li><p><strong>optimizer_idx</strong> – If you used multiple optimizers, this indexes into that list.</p></li>
+<li><p><strong>optimizer_closure</strong> – The optimizer closure. This closure must be executed as it includes the
+calls to <code class="docutils literal notranslate"><span class="pre">training_step()</span></code>, <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad()</span></code>, and <code class="docutils literal notranslate"><span class="pre">backward()</span></code>.</p></li>
+<li><p><strong>on_tpu</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> if TPU backward is required</p></li>
+<li><p><strong>using_native_amp</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> if using native amp</p></li>
+<li><p><strong>using_lbfgs</strong> – True if the matching optimizer is <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.optim.LBFGS</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEFAULT</span>
+<span class="k">def</span> <span class="nf">optimizer_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">optimizer_idx</span><span class="p">,</span>
+                   <span class="n">optimizer_closure</span><span class="p">,</span> <span class="n">on_tpu</span><span class="p">,</span> <span class="n">using_native_amp</span><span class="p">,</span> <span class="n">using_lbfgs</span><span class="p">):</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">closure</span><span class="o">=</span><span class="n">optimizer_closure</span><span class="p">)</span>
+
+<span class="c1"># Alternating schedule for optimizer steps (i.e.: GANs)</span>
+<span class="k">def</span> <span class="nf">optimizer_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">optimizer_idx</span><span class="p">,</span>
+                   <span class="n">optimizer_closure</span><span class="p">,</span> <span class="n">on_tpu</span><span class="p">,</span> <span class="n">using_native_amp</span><span class="p">,</span> <span class="n">using_lbfgs</span><span class="p">):</span>
+    <span class="c1"># update generator opt every step</span>
+    <span class="k">if</span> <span class="n">optimizer_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">closure</span><span class="o">=</span><span class="n">optimizer_closure</span><span class="p">)</span>
+
+    <span class="c1"># update discriminator opt every 2 steps</span>
+    <span class="k">if</span> <span class="n">optimizer_idx</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">batch_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">closure</span><span class="o">=</span><span class="n">optimizer_closure</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># call the closure by itself to run `training_step` + `backward` without an optimizer step</span>
+            <span class="n">optimizer_closure</span><span class="p">()</span>
+
+    <span class="c1"># ...</span>
+    <span class="c1"># add as many optimizers as you want</span>
+</pre></div>
+</div>
+<p>Here’s another example showing how to use this for more advanced things such as
+learning rate warm-up:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># learning rate warm-up</span>
+<span class="k">def</span> <span class="nf">optimizer_step</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">epoch</span><span class="p">,</span>
+    <span class="n">batch_idx</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="p">,</span>
+    <span class="n">optimizer_idx</span><span class="p">,</span>
+    <span class="n">optimizer_closure</span><span class="p">,</span>
+    <span class="n">on_tpu</span><span class="p">,</span>
+    <span class="n">using_native_amp</span><span class="p">,</span>
+    <span class="n">using_lbfgs</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="c1"># update params</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">closure</span><span class="o">=</span><span class="n">optimizer_closure</span><span class="p">)</span>
+
+    <span class="c1"># manually warm up lr without a scheduler</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">global_step</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="n">lr_scale</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">global_step</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">500.0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">pg</span> <span class="ow">in</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">:</span>
+            <span class="n">pg</span><span class="p">[</span><span class="s2">&quot;lr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lr_scale</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.save_generated_images">
+<code class="sig-name descname">save_generated_images</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.save_generated_images"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.save_generated_images" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.model.PGAN.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.model.PGAN.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN.training_step">
+<code class="sig-name descname">training_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch</span></em>, <em class="sig-param"><span class="n">batch_idx</span></em>, <em class="sig-param"><span class="n">optimizer_idx</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN.training_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN.training_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Here you compute and return the training loss and some additional metrics for e.g.
+the progress bar or logger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code> | (<code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code>, …) | [<code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code>, …]) – The output of your <code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>. A tensor, tuple or list.</p></li>
+<li><p><strong>batch_idx</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – Integer displaying index of this batch</p></li>
+<li><p><strong>optimizer_idx</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – When using multiple optimizers, this argument will also be present.</p></li>
+<li><p><strong>hiddens</strong> (<code class="docutils literal notranslate"><span class="pre">Any</span></code>) – Passed in if
+<a href="#id1"><span class="problematic" id="id2">:paramref:`~pytorch_lightning.core.lightning.LightningModule.truncated_bptt_steps`</span></a> &gt; 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Any of.</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Tensor</span></code> - The loss tensor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> - A dictionary. Can include any keys, but must include the key <code class="docutils literal notranslate"><span class="pre">'loss'</span></code></p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">None</span></code> - Training will skip to the next batch. This is only for automatic optimization.</dt><dd><p>This is not supported for multi-GPU, TPU, IPU, or DeepSpeed.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>In this step you’d normally do the forward pass and calculate the loss for a batch.
+You can also do fancier things like multiple forward passes or something model specific.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">batch</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">loss</span>
+</pre></div>
+</div>
+<p>If you define multiple optimizers, this step will be called with an additional
+<code class="docutils literal notranslate"><span class="pre">optimizer_idx</span></code> parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiple optimizers (e.g.: GANs)</span>
+<span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="n">optimizer_idx</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">optimizer_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># do training_step with encoder</span>
+        <span class="o">...</span>
+    <span class="k">if</span> <span class="n">optimizer_idx</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># do training_step with decoder</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>If you add truncated back propagation through time you will also get an additional
+argument with the hidden states of the previous step.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Truncated back-propagation through time</span>
+<span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="n">hiddens</span><span class="p">):</span>
+    <span class="c1"># hiddens are the hidden states from the previous truncated backprop step</span>
+    <span class="n">out</span><span class="p">,</span> <span class="n">hiddens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">hiddens</span><span class="p">)</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;loss&quot;</span><span class="p">:</span> <span class="n">loss</span><span class="p">,</span> <span class="s2">&quot;hiddens&quot;</span><span class="p">:</span> <span class="n">hiddens</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The loss value shown in the progress bar is smoothed (averaged) over the last values,
+so it differs from the actual loss returned in train/validation step.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.model.PGAN_loaded">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.model.</code><code class="sig-name descname">PGAN_loaded</code><span class="sig-paren">(</span><em class="sig-param">lr=0.1</em>, <em class="sig-param">latent_size=512</em>, <em class="sig-param">final_res=32</em>, <em class="sig-param">curr_res=4</em>, <em class="sig-param">k=1</em>, <em class="sig-param">alpha=0.0</em>, <em class="sig-param">alpha_step=0.1</em>, <em class="sig-param">loss_f=&lt;function WGANGP_loss&gt;</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">activation_f=LeakyReLU(negative_slope=0.2)</em>, <em class="sig-param">device='cuda'</em>, <em class="sig-param">normalize_img=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN_loaded"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pgan_dl.src.model.PGAN" title="pgan_dl.src.model.PGAN"><code class="xref py py-class docutils literal notranslate"><span class="pre">pgan_dl.src.model.PGAN</span></code></a></p>
+<dl class="py method">
+<dt id="pgan_dl.src.model.PGAN_loaded.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">lr=0.1</em>, <em class="sig-param">latent_size=512</em>, <em class="sig-param">final_res=32</em>, <em class="sig-param">curr_res=4</em>, <em class="sig-param">k=1</em>, <em class="sig-param">alpha=0.0</em>, <em class="sig-param">alpha_step=0.1</em>, <em class="sig-param">loss_f=&lt;function WGANGP_loss&gt;</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">activation_f=LeakyReLU(negative_slope=0.2)</em>, <em class="sig-param">device='cuda'</em>, <em class="sig-param">normalize_img=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/model.html#PGAN_loaded.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.model.PGAN_loaded.allow_zero_length_dataloader_with_multiple_devices">
+<code class="sig-name descname">allow_zero_length_dataloader_with_multiple_devices</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded.allow_zero_length_dataloader_with_multiple_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.model.PGAN_loaded.precision">
+<code class="sig-name descname">precision</code><em class="property">: int</em><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded.precision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.model.PGAN_loaded.prepare_data_per_node">
+<code class="sig-name descname">prepare_data_per_node</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded.prepare_data_per_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.model.PGAN_loaded.trainer">
+<code class="sig-name descname">trainer</code><em class="property">: Optional<span class="p">[</span>pl.Trainer<span class="p">]</span></em><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded.trainer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.model.PGAN_loaded.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.model.PGAN_loaded.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pgan_dl.src.my_pgan">
+<span id="pgan-dl-src-my-pgan-module"></span><h2>pgan_dl.src.my_pgan module<a class="headerlink" href="#module-pgan_dl.src.my_pgan" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pgan_dl.src.my_pgan.Dis_residual">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">Dis_residual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">channels</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">start_alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Dis_residual"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Dis_residual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Dis_residual.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">channels</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">start_alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Dis_residual.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Dis_residual.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Dis_residual.increase_alpha">
+<code class="sig-name descname">increase_alpha</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">by</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Dis_residual.increase_alpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Dis_residual.increase_alpha" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.my_pgan.Dis_residual.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.my_pgan.Dis_residual.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.my_pgan.Discriminator">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">Discriminator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">latent_size</span><span class="o">=</span><span class="default_value">512</span></em>, <em class="sig-param"><span class="n">final_res</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em>, <em class="sig-param"><span class="n">normalize_img</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Discriminator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Discriminator.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">latent_size</span><span class="o">=</span><span class="default_value">512</span></em>, <em class="sig-param"><span class="n">final_res</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em>, <em class="sig-param"><span class="n">normalize_img</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Discriminator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Discriminator.add_scale">
+<code class="sig-name descname">add_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_alpha</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Discriminator.add_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator.add_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Discriminator.finish_adding_scale">
+<code class="sig-name descname">finish_adding_scale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Discriminator.finish_adding_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator.finish_adding_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Discriminator.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">getFeature</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Discriminator.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Discriminator.increase_alpha">
+<code class="sig-name descname">increase_alpha</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">by</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Discriminator.increase_alpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator.increase_alpha" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.my_pgan.Discriminator.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.my_pgan.Discriminator.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.my_pgan.Gen_residual">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">Gen_residual</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">channels</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">start_alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Gen_residual"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Gen_residual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Gen_residual.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">channels</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">start_alpha</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Gen_residual.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Gen_residual.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Gen_residual.increase_alpha">
+<code class="sig-name descname">increase_alpha</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">by</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Gen_residual.increase_alpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Gen_residual.increase_alpha" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.my_pgan.Gen_residual.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.my_pgan.Gen_residual.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.my_pgan.Generator">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">Generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">latent_size</span><span class="o">=</span><span class="default_value">512</span></em>, <em class="sig-param"><span class="n">final_res</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Generator.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">latent_size</span><span class="o">=</span><span class="default_value">512</span></em>, <em class="sig-param"><span class="n">final_res</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">device</span><span class="o">=</span><span class="default_value">'cuda'</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">activation_f</span><span class="o">=</span><span class="default_value">LeakyReLU(negative_slope=0.01)</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Generator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Generator.add_scale">
+<code class="sig-name descname">add_scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_alpha</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Generator.add_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator.add_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Generator.finish_adding_scale">
+<code class="sig-name descname">finish_adding_scale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Generator.finish_adding_scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator.finish_adding_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Generator.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Generator.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.Generator.increase_alpha">
+<code class="sig-name descname">increase_alpha</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">by</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#Generator.increase_alpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator.increase_alpha" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.my_pgan.Generator.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.my_pgan.Generator.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.my_pgan.MSE_loss">
+<code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">MSE_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">zi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">net</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#MSE_loss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.MSE_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.my_pgan.WGANGP_loss">
+<code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">WGANGP_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">zi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">net</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#WGANGP_loss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.WGANGP_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pgan_dl.src.my_pgan.miniBatchStdDev">
+<em class="property">class </em><code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">miniBatchStdDev</code><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#miniBatchStdDev"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.miniBatchStdDev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.miniBatchStdDev.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#miniBatchStdDev.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.miniBatchStdDev.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pgan_dl.src.my_pgan.miniBatchStdDev.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">subGroupSize</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#miniBatchStdDev.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.miniBatchStdDev.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a minibatch standard deviation channel to the current layer.
+In other words:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Compute the standard deviation of the feature map over the minibatch</p></li>
+<li><p>Get the mean, over all pixels and all channels of thsi ValueError</p></li>
+<li><p>expand the layer and cocatenate it with the input</p></li>
+</ol>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>-</em>) – previous layer</p></li>
+<li><p><strong>subGroupSize</strong> (<em>-</em>) – size of the mini-batches on which the standard deviation</p></li>
+<li><p><strong>be computed</strong> (<em>should</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pgan_dl.src.my_pgan.miniBatchStdDev.training">
+<code class="sig-name descname">training</code><em class="property">: bool</em><a class="headerlink" href="#pgan_dl.src.my_pgan.miniBatchStdDev.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.my_pgan.num_flat_features">
+<code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">num_flat_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#num_flat_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.num_flat_features" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.src.my_pgan.original_loss">
+<code class="sig-prename descclassname">pgan_dl.src.my_pgan.</code><code class="sig-name descname">original_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">zi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">xi</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">net</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/src/my_pgan.html#original_loss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.src.my_pgan.original_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pgan_dl.pipelines.model_training.html" class="btn btn-neutral float-left" title="pgan_dl.pipelines.model_training package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

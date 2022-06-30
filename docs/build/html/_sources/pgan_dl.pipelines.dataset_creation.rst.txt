@@ -1,0 +1,26 @@
+pgan\_dl.pipelines.dataset\_creation package
+============================================
+
+.. automodule:: pgan_dl.pipelines.dataset_creation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+pgan\_dl.pipelines.dataset\_creation.nodes module
+-------------------------------------------------
+
+.. automodule:: pgan_dl.pipelines.dataset_creation.nodes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.pipelines.dataset\_creation.pipeline module
+----------------------------------------------------
+
+.. automodule:: pgan_dl.pipelines.dataset_creation.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:

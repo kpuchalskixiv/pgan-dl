@@ -1,0 +1,35 @@
+pgan\_dl package
+================
+
+.. automodule:: pgan_dl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pgan_dl.pipelines
+   pgan_dl.src
+
+Submodules
+----------
+
+pgan\_dl.pipeline\_registry module
+----------------------------------
+
+.. automodule:: pgan_dl.pipeline_registry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.settings module
+------------------------
+
+.. automodule:: pgan_dl.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:

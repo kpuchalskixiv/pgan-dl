@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pgan_dl.src.custom_layers &mdash; pgan_dl 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/qb1-sphinx-rtd.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/theme-overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pgan_dl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">pgan_dl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pgan_dl.html">pgan_dl package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../pgan_dl.pipelines.html">pgan_dl.pipelines package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../pgan_dl.src.html">pgan_dl.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#module-pgan_dl.pipeline_registry">pgan_dl.pipeline_registry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#module-pgan_dl.settings">pgan_dl.settings module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pgan_dl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pgan_dl.src.custom_layers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pgan_dl.src.custom_layers</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">prod</span>
+
+
+<div class="viewcode-block" id="NormalizationLayer"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.NormalizationLayer">[docs]</a><span class="k">class</span> <span class="nc">NormalizationLayer</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+
+<div class="viewcode-block" id="NormalizationLayer.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.NormalizationLayer.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NormalizationLayer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="NormalizationLayer.forward"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.NormalizationLayer.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">)</span><span class="o">.</span><span class="n">rsqrt</span><span class="p">())</span></div></div>
+
+
+<div class="viewcode-block" id="Upscale2d"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.Upscale2d">[docs]</a><span class="k">def</span> <span class="nf">Upscale2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">factor</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">factor</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">factor</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">factor</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">factor</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">factor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span></div>
+
+
+<div class="viewcode-block" id="getLayerNormalizationFactor"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.getLayerNormalizationFactor">[docs]</a><span class="k">def</span> <span class="nf">getLayerNormalizationFactor</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get He&#39;s constant for the given layer</span>
+<span class="sd">    https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/He_Delving_Deep_into_ICCV_2015_paper.pdf</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">fan_in</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="n">fan_in</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ConstrainedLayer"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.ConstrainedLayer">[docs]</a><span class="k">class</span> <span class="nc">ConstrainedLayer</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A handy refactor that allows the user to:</span>
+<span class="sd">    - initialize one layer&#39;s bias to zero</span>
+<span class="sd">    - apply He&#39;s initialization at runtime</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ConstrainedLayer.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.ConstrainedLayer.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">module</span><span class="p">,</span>
+                 <span class="n">equalized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">lrMul</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                 <span class="n">initBiasToZero</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        equalized (bool): if true, the layer&#39;s weight should evolve within</span>
+<span class="sd">                         the range (-1, 1)</span>
+<span class="sd">        initBiasToZero (bool): if true, bias will be initialized to zero</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">ConstrainedLayer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">module</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">equalized</span> <span class="o">=</span> <span class="n">equalized</span>
+
+        <span class="k">if</span> <span class="n">initBiasToZero</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill_</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">equalized</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span> <span class="o">/=</span> <span class="n">lrMul</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">getLayerNormalizationFactor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">)</span> <span class="o">*</span> <span class="n">lrMul</span></div>
+
+<div class="viewcode-block" id="ConstrainedLayer.forward"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.ConstrainedLayer.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">equalized</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span>
+        <span class="k">return</span> <span class="n">x</span></div></div>
+
+
+<div class="viewcode-block" id="EqualizedConv2d"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.EqualizedConv2d">[docs]</a><span class="k">class</span> <span class="nc">EqualizedConv2d</span><span class="p">(</span><span class="n">ConstrainedLayer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EqualizedConv2d.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.EqualizedConv2d.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">nChannelsPrevious</span><span class="p">,</span>
+                 <span class="n">nChannels</span><span class="p">,</span>
+                 <span class="n">kernelSize</span><span class="p">,</span>
+                 <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A nn.Conv2d module with specific constraints</span>
+<span class="sd">        Args:</span>
+<span class="sd">            nChannelsPrevious (int): number of channels in the previous layer</span>
+<span class="sd">            nChannels (int): number of channels of the current layer</span>
+<span class="sd">            kernelSize (int): size of the convolutional kernel</span>
+<span class="sd">            padding (int): convolution&#39;s padding</span>
+<span class="sd">            bias (bool): with bias ?</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ConstrainedLayer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                                  <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">nChannelsPrevious</span><span class="p">,</span> <span class="n">nChannels</span><span class="p">,</span>
+                                            <span class="n">kernelSize</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="n">padding</span><span class="p">,</span>
+                                            <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">),</span>
+                                  <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="EqualizedLinear"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.EqualizedLinear">[docs]</a><span class="k">class</span> <span class="nc">EqualizedLinear</span><span class="p">(</span><span class="n">ConstrainedLayer</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EqualizedLinear.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.custom_layers.EqualizedLinear.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">nChannelsPrevious</span><span class="p">,</span>
+                 <span class="n">nChannels</span><span class="p">,</span>
+                 <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A nn.Linear module with specific constraints</span>
+<span class="sd">        Args:</span>
+<span class="sd">            nChannelsPrevious (int): number of channels in the previous layer</span>
+<span class="sd">            nChannels (int): number of channels of the current layer</span>
+<span class="sd">            bias (bool): with bias ?</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ConstrainedLayer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                                  <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">nChannelsPrevious</span><span class="p">,</span> <span class="n">nChannels</span><span class="p">,</span>
+                                  <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

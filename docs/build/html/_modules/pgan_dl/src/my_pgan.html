@@ -1,0 +1,614 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pgan_dl.src.my_pgan &mdash; pgan_dl 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/qb1-sphinx-rtd.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/theme-overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pgan_dl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">pgan_dl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../pgan_dl.html">pgan_dl package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../pgan_dl.pipelines.html">pgan_dl.pipelines package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../pgan_dl.src.html">pgan_dl.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#module-pgan_dl.pipeline_registry">pgan_dl.pipeline_registry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../pgan_dl.html#module-pgan_dl.settings">pgan_dl.settings module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pgan_dl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pgan_dl.src.my_pgan</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pgan_dl.src.my_pgan</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+
+<span class="kn">from</span> <span class="nn">.custom_layers</span> <span class="kn">import</span> <span class="n">EqualizedConv2d</span><span class="p">,</span> <span class="n">EqualizedLinear</span><span class="p">,</span>\
+    <span class="n">NormalizationLayer</span>
+<span class="kn">from</span> <span class="nn">.gradient_losses</span> <span class="kn">import</span> <span class="n">WGANGPGradientPenalty</span>
+
+
+<div class="viewcode-block" id="Gen_residual"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Gen_residual">[docs]</a><span class="k">class</span> <span class="nc">Gen_residual</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Gen_residual.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Gen_residual.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">start_alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">activation_f</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="n">start_alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="o">=</span><span class="n">channels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="o">=</span><span class="n">activation_f</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">=</span><span class="n">device</span>
+
+        <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="o">=</span><span class="n">NormalizationLayer</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Identity</span>
+
+        <span class="k">if</span> <span class="n">res</span><span class="o">&gt;=</span><span class="mi">64</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="p">(),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="p">(),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">introduce</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="p">(),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="p">(),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">introduce</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">introduce</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Gen_residual.increase_alpha"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Gen_residual.increase_alpha">[docs]</a>    <span class="k">def</span> <span class="nf">increase_alpha</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">+</span><span class="n">by</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="Dis_residual"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Dis_residual">[docs]</a><span class="k">class</span> <span class="nc">Dis_residual</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Dis_residual.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Dis_residual.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span><span class="n">start_alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">activation_f</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="n">start_alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="o">=</span><span class="n">channels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="o">=</span><span class="n">activation_f</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">=</span><span class="n">device</span>
+
+    <span class="c1">#    if normalize:</span>
+     <span class="c1">#       self.normalization_layer=NormalizationLayer</span>
+      <span class="c1">#  else:</span>
+       <span class="c1">#     self.normalization_layer=nn.Identity</span>
+        <span class="c1">#no normalization in descriminator</span>
+
+        <span class="k">if</span> <span class="n">res</span><span class="o">&gt;=</span><span class="mi">64</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>  <span class="c1"># this is what stays on the pgan</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="c1"># from rgb</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">introduce</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span> <span class="c1"># this is just for introducing new scale</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># from rgb</span>
+            <span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>  <span class="c1"># this is what stays on the pgan</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span> <span class="c1"># from rgb</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">introduce</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span> <span class="c1"># this is just for introducing new scale</span>
+                        <span class="n">nn</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+                        <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># from rgb</span>
+            <span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">introduce</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Dis_residual.increase_alpha"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Dis_residual.increase_alpha">[docs]</a>    <span class="k">def</span> <span class="nf">increase_alpha</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">+</span><span class="n">by</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="num_flat_features"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.num_flat_features">[docs]</a><span class="k">def</span> <span class="nf">num_flat_features</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># all dimensions except the batch dimension</span>
+    <span class="n">num_features</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">size</span><span class="p">:</span>
+        <span class="n">num_features</span> <span class="o">*=</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">num_features</span></div>
+
+<div class="viewcode-block" id="miniBatchStdDev"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.miniBatchStdDev">[docs]</a><span class="k">class</span> <span class="nc">miniBatchStdDev</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="miniBatchStdDev.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.miniBatchStdDev.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="miniBatchStdDev.forward"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.miniBatchStdDev.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">subGroupSize</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a minibatch standard deviation channel to the current layer.</span>
+<span class="sd">        In other words:</span>
+<span class="sd">            1) Compute the standard deviation of the feature map over the minibatch</span>
+<span class="sd">            2) Get the mean, over all pixels and all channels of thsi ValueError</span>
+<span class="sd">            3) expand the layer and cocatenate it with the input</span>
+
+<span class="sd">        Args:</span>
+
+<span class="sd">            - x (tensor): previous layer</span>
+<span class="sd">            - subGroupSize (int): size of the mini-batches on which the standard deviation</span>
+<span class="sd">            should be computed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+        <span class="n">subGroupSize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">subGroupSize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">%</span> <span class="n">subGroupSize</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">subGroupSize</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">subGroupSize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">subGroupSize</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">subGroupSize</span><span class="p">,</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">size</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">size</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">view</span><span class="p">((</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">subGroupSize</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span><span class="o">.</span><span class="n">view</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="Generator"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Generator">[docs]</a><span class="k">class</span> <span class="nc">Generator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Generator.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Generator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">latent_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">final_res</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">activation_f</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">()):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1">#self.save_hyperparameters()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">=</span><span class="mi">4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">final_res</span><span class="o">=</span><span class="n">final_res</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">=</span><span class="n">device</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">res_chanel_dict</span><span class="o">=</span><span class="p">{</span>
+                            <span class="mi">4</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">8</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">16</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">32</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">64</span><span class="p">:</span><span class="mi">256</span><span class="p">,</span>
+                            <span class="mi">128</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span>
+                            <span class="mi">256</span><span class="p">:</span><span class="mi">64</span><span class="p">,</span>
+                            <span class="mi">512</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span>
+                            <span class="mi">1024</span><span class="p">:</span><span class="mi">16</span>
+                             <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="o">=</span><span class="n">NormalizationLayer</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Identity</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="o">=</span><span class="n">activation_f</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>
+                    <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="n">latent_size</span><span class="p">,</span><span class="n">latent_size</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="p">(),</span>
+                    <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="n">latent_size</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="p">(),</span>
+                    <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">=</span><span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Generator.forward"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Generator.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_flat_features</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+      <span class="c1">#  print(x.shape)</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="p">:</span>
+            <span class="n">x_prim</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">.</span><span class="n">introduce</span><span class="p">:</span>
+                <span class="n">x_prim</span><span class="o">=</span><span class="n">layer</span><span class="p">(</span><span class="n">x_prim</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">.</span><span class="n">model</span><span class="p">:</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">x_prim</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">](</span><span class="n">x</span><span class="p">)</span> <span class="c1">#to rgb, if no upscaling is currently performed</span>
+
+        <span class="c1">#normalize pixels into (0,1), same as CIFAR used</span>
+        <span class="k">return</span> <span class="n">x</span></div>
+
+
+
+<div class="viewcode-block" id="Generator.add_scale"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Generator.add_scale">[docs]</a>    <span class="k">def</span> <span class="nf">add_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">*=</span><span class="mi">2</span>
+        <span class="k">assert</span><span class="p">(</span><span class="mi">0</span><span class="o">&lt;=</span><span class="n">start_alpha</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="n">start_alpha</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">=</span><span class="n">Gen_residual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_chanel_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                                 <span class="n">start_alpha</span><span class="o">=</span><span class="n">start_alpha</span><span class="p">,</span> <span class="n">activation_f</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Generator.increase_alpha"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Generator.increase_alpha">[docs]</a>    <span class="k">def</span> <span class="nf">increase_alpha</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">by</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">+</span><span class="n">by</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Generator.finish_adding_scale"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Generator.finish_adding_scale">[docs]</a>    <span class="k">def</span> <span class="nf">finish_adding_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">.</span><span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">=</span><span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.0</span></div></div>
+
+<div class="viewcode-block" id="Discriminator"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Discriminator">[docs]</a><span class="k">class</span> <span class="nc">Discriminator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="Discriminator.__init__"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Discriminator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">latent_size</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">final_res</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">activation_f</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span> <span class="n">normalize_img</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1">#self.save_hyperparameters()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">=</span><span class="n">device</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">=</span><span class="mi">4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">final_res</span><span class="o">=</span><span class="n">final_res</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">normalize_img</span><span class="o">=</span><span class="n">normalize_img</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res_chanel_dict</span><span class="o">=</span><span class="p">{</span>
+                            <span class="mi">4</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">8</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">16</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">32</span><span class="p">:</span><span class="mi">512</span><span class="p">,</span>
+                            <span class="mi">64</span><span class="p">:</span><span class="mi">256</span><span class="p">,</span>
+                            <span class="mi">128</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span>
+                            <span class="mi">256</span><span class="p">:</span><span class="mi">64</span><span class="p">,</span>
+                            <span class="mi">512</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span>
+                            <span class="mi">1024</span><span class="p">:</span><span class="mi">16</span>
+                             <span class="p">}</span>
+        <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="o">=</span><span class="n">NormalizationLayer</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">normalization_layer</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Identity</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="o">=</span><span class="n">activation_f</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minibatch_layer</span><span class="o">=</span><span class="n">miniBatchStdDev</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span>
+                    <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">minibatch_layer</span><span class="p">,</span>
+                    <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">513</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="n">EqualizedConv2d</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span><span class="n">latent_size</span><span class="p">,</span>  <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">kernelSize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decision_layer</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">EqualizedLinear</span><span class="p">(</span><span class="n">latent_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span><span class="c1">#, nn.Sigmoid())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">=</span><span class="kc">None</span></div>
+
+<div class="viewcode-block" id="Discriminator.forward"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Discriminator.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">getFeature</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="c1">#normalize both generated and training images</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalize_img</span><span class="p">:</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">&lt;</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">ratio</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="n">ratio</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="n">ratio</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">&gt;</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">ratio</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">//</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span><span class="n">ratio</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="p">:</span>
+            <span class="n">x_prim</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">.</span><span class="n">introduce</span><span class="p">:</span>
+                <span class="n">x_prim</span><span class="o">=</span><span class="n">layer</span><span class="p">(</span><span class="n">x_prim</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">.</span><span class="n">model</span><span class="p">:</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">x_prim</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># from rgb, if no upscaling is currently performed</span>
+            <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="n">x</span><span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_flat_features</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">out</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">decision_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span></div>
+
+
+<div class="viewcode-block" id="Discriminator.add_scale"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Discriminator.add_scale">[docs]</a>    <span class="k">def</span> <span class="nf">add_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span> <span class="c1"># average pooling in descriminator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="o">*=</span><span class="mi">2</span>
+        <span class="k">assert</span><span class="p">(</span><span class="mi">0</span><span class="o">&lt;=</span><span class="n">start_alpha</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="n">start_alpha</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">=</span><span class="n">Dis_residual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_chanel_dict</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">curr_res</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                                 <span class="n">start_alpha</span><span class="o">=</span><span class="n">start_alpha</span><span class="p">,</span>  <span class="n">activation_f</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Discriminator.increase_alpha"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Discriminator.increase_alpha">[docs]</a>    <span class="k">def</span> <span class="nf">increase_alpha</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">by</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">+</span><span class="n">by</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Discriminator.finish_adding_scale"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.Discriminator.finish_adding_scale">[docs]</a>    <span class="k">def</span> <span class="nf">finish_adding_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">.</span><span class="n">model</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">residual</span><span class="o">=</span><span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span><span class="o">=</span><span class="mi">0</span></div></div>
+
+
+<div class="viewcode-block" id="WGANGP_loss"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.WGANGP_loss">[docs]</a><span class="k">def</span> <span class="nf">WGANGP_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">zi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">net</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">net</span><span class="o">==</span><span class="s1">&#39;generator&#39;</span><span class="p">:</span>
+        <span class="n">gen_imgs</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">zi</span><span class="p">)</span>
+        <span class="n">decisions</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">))</span>
+
+        <span class="n">g_loss</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="n">decisions</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">g_loss</span>
+    <span class="k">elif</span> <span class="n">net</span><span class="o">==</span><span class="s1">&#39;discriminator&#39;</span><span class="p">:</span>
+        <span class="n">decisions_x</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">xi</span><span class="p">))</span>
+        <span class="n">gen_imgs</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">zi</span><span class="p">))</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">decisions_z</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">))</span>
+
+        <span class="n">loss_x</span><span class="o">=-</span><span class="n">decisions_x</span>
+        <span class="n">loss_z</span><span class="o">=</span><span class="n">decisions_z</span>
+
+        <span class="n">lossEpsilon</span> <span class="o">=</span> <span class="p">(</span><span class="n">decisions_x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span>
+        <span class="c1">#loss_x += lossEpsilon</span>
+
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">hparams</span><span class="o">.</span><span class="n">curr_res</span><span class="o">&lt;</span><span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">ratio</span><span class="o">=</span><span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="n">model</span><span class="o">.</span><span class="n">hparams</span><span class="o">.</span><span class="n">curr_res</span>
+            <span class="n">xi</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="n">ratio</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="n">ratio</span><span class="p">)(</span><span class="n">xi</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">model</span><span class="o">.</span><span class="n">hparams</span><span class="o">.</span><span class="n">curr_res</span><span class="o">&gt;</span><span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">ratio</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">hparams</span><span class="o">.</span><span class="n">curr_res</span><span class="o">//</span><span class="n">xi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">xi</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Upsample</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span><span class="n">ratio</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)(</span><span class="n">xi</span><span class="p">)</span>
+        <span class="n">d_loss_grad_penalty</span> <span class="o">=</span> <span class="n">WGANGPGradientPenalty</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span>
+                                            <span class="n">gen_imgs</span><span class="p">,</span>
+                                            <span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">,</span>
+                                            <span class="mf">10.0</span><span class="p">,</span>
+                                            <span class="n">backward</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1">#    print(loss_x.shape,loss_z.shape,lossEpsilon.shape,d_loss_grad_penalty.shape)</span>
+
+        <span class="n">d_loss</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">loss_x</span><span class="o">+</span><span class="n">loss_z</span><span class="o">+</span><span class="n">lossEpsilon</span><span class="o">+</span><span class="n">d_loss_grad_penalty</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d_loss</span></div>
+
+<div class="viewcode-block" id="original_loss"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.original_loss">[docs]</a><span class="k">def</span> <span class="nf">original_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">zi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">net</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">net</span><span class="o">==</span><span class="s1">&#39;generator&#39;</span><span class="p">:</span>
+        <span class="n">gen_imgs</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">zi</span><span class="p">)</span>
+        <span class="n">decisions</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">))</span>
+
+        <span class="n">g_loss</span><span class="o">=-</span><span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">decisions</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">g_loss</span>
+    <span class="k">elif</span> <span class="n">net</span><span class="o">==</span><span class="s1">&#39;discriminator&#39;</span><span class="p">:</span>
+        <span class="n">decisions_x</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">xi</span><span class="p">))</span>
+
+        <span class="n">gen_imgs</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">zi</span><span class="p">))</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">decisions_z</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">))</span>
+
+        <span class="n">loss_x</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">decisions_x</span><span class="p">))</span>
+        <span class="n">loss_z</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">decisions_z</span><span class="p">))</span>
+        <span class="n">d_loss</span><span class="o">=-</span><span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">loss_x</span><span class="o">+</span><span class="n">loss_z</span><span class="p">)</span>  <span class="c1"># ascend gradient, maximize. BUT torch optimis minimize loss, so return -mean</span>
+        <span class="k">return</span> <span class="n">d_loss</span></div>
+
+<div class="viewcode-block" id="MSE_loss"><a class="viewcode-back" href="../../../pgan_dl.src.html#pgan_dl.src.my_pgan.MSE_loss">[docs]</a><span class="k">def</span> <span class="nf">MSE_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">zi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">net</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="c1">#. D(x) represents the probability that x came from the data rather than pg.</span>
+    <span class="k">if</span> <span class="n">net</span><span class="o">==</span><span class="s1">&#39;generator&#39;</span><span class="p">:</span>
+        <span class="n">gen_imgs</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">zi</span><span class="p">)</span>
+        <span class="n">decisions</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">))</span>
+
+        <span class="n">no_samples</span><span class="o">=</span><span class="n">decisions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">reference</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">no_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">decisions</span><span class="p">),</span> <span class="n">reference</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">net</span><span class="o">==</span><span class="s1">&#39;discriminator&#39;</span><span class="p">:</span>
+        <span class="n">decisions_x</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">xi</span><span class="p">))</span>
+
+        <span class="n">gen_imgs</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">generator</span><span class="p">(</span><span class="n">zi</span><span class="p">))</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">decisions_z</span><span class="o">=</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">))</span>
+
+        <span class="n">no_samples</span><span class="o">=</span><span class="n">decisions_z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">reference_x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">reference_z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">no_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">loss_x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">decisions_x</span><span class="p">),</span> <span class="n">reference_x</span><span class="p">)</span>
+        <span class="n">loss_z</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">decisions_z</span><span class="p">),</span> <span class="n">reference_z</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">loss_x</span><span class="o">+</span><span class="n">loss_z</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+pgan\_dl.pipelines.model\_evaluation package
+============================================
+
+.. automodule:: pgan_dl.pipelines.model_evaluation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+pgan\_dl.pipelines.model\_evaluation.nodes module
+-------------------------------------------------
+
+.. automodule:: pgan_dl.pipelines.model_evaluation.nodes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.pipelines.model\_evaluation.pipeline module
+----------------------------------------------------
+
+.. automodule:: pgan_dl.pipelines.model_evaluation.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:

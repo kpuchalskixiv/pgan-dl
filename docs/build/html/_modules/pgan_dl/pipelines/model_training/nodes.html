@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pgan_dl.pipelines.model_training.nodes &mdash; pgan_dl 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/qb1-sphinx-rtd.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/theme-overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> pgan_dl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">pgan_dl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../pgan_dl.html">pgan_dl package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../pgan_dl.pipelines.html">pgan_dl.pipelines package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../pgan_dl.src.html">pgan_dl.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#module-pgan_dl.pipeline_registry">pgan_dl.pipeline_registry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../pgan_dl.html#module-pgan_dl.settings">pgan_dl.settings module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">pgan_dl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pgan_dl.pipelines.model_training.nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pgan_dl.pipelines.model_training.nodes</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">torchvision</span> <span class="k">as</span> <span class="nn">tv</span>
+<span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">data_utils</span>
+<span class="kn">from</span> <span class="nn">pytorch_lightning.loggers</span> <span class="kn">import</span> <span class="n">WandbLogger</span>
+<span class="kn">import</span> <span class="nn">wandb</span>
+<span class="kn">from</span> <span class="nn">...src.model</span> <span class="kn">import</span> <span class="n">PGAN</span>
+<span class="kn">from</span> <span class="nn">...src.my_pgan</span> <span class="kn">import</span> <span class="n">WGANGP_loss</span>
+<span class="kn">import</span> <span class="nn">pytorch_lightning</span> <span class="k">as</span> <span class="nn">pl</span>
+
+
+<span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">set_sharing_strategy</span><span class="p">(</span><span class="s1">&#39;file_system&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="create_data_loader"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_training.html#pgan_dl.pipelines.model_training.nodes.create_data_loader">[docs]</a><span class="k">def</span> <span class="nf">create_data_loader</span><span class="p">(</span><span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_workers</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates pytorch data loader from places365 dataset</span>
+<span class="sd">    :param input_dir: Path to the root of the dataset</span>
+<span class="sd">    :type input_dir: str</span>
+<span class="sd">    :param batch_size: Number of images in a batch</span>
+<span class="sd">    :type batch_size: int</span>
+<span class="sd">    :param num_workers: How many subprocesses are used for data loading</span>
+<span class="sd">    :type num_workers: int</span>
+<span class="sd">    :return: Data loader for the dataset</span>
+<span class="sd">    :rtype: torch.utils.data.DataLoader</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data_train</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">tv</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()),</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span>
+    <span class="p">)</span>
+
+    <span class="n">oneclass_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data_train</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">labels</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">oneclass_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">data_utils</span><span class="o">.</span><span class="n">TensorDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">oneclass_data</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oneclass_data</span><span class="p">))),</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="initialize"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_training.html#pgan_dl.pipelines.model_training.nodes.initialize">[docs]</a><span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span>
+    <span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">latent_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">final_res</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">negative_slope</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">alpha_step</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">lr</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">PGAN</span><span class="p">,</span> <span class="n">DataLoader</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes neural network for solving classification problem on Places365 dataset</span>
+<span class="sd">    :param input_dir: Path to the split dataset.</span>
+<span class="sd">    :type input_dir: str</span>
+<span class="sd">    :param latent_size: A latent size of a model.</span>
+<span class="sd">    :type latent_size: int</span>
+<span class="sd">    :param final_res: A resolution of the generated image.</span>
+<span class="sd">    :type final_res: int</span>
+<span class="sd">    :param negative_slope: A hyperparam of the LeakyReLU activation function.</span>
+<span class="sd">    :type negative_slope: float</span>
+<span class="sd">    :param alpha_step: A alpha_step of the model</span>
+<span class="sd">    :type alpha_step: float</span>
+<span class="sd">    :param batch_size: Number of images in a batch.</span>
+<span class="sd">    :type batch_size: int</span>
+<span class="sd">    :param lr: Learning rate for model&#39;s optimizer.</span>
+<span class="sd">    :type lr: float</span>
+<span class="sd">    :param num_workers: How many subprocesses are used for data loading.</span>
+<span class="sd">    :type num_workers: int</span>
+<span class="sd">    :return: Model object alongside train, validation, test data loaders</span>
+<span class="sd">    :rtype: Tuple[PGAN, torch.utils.data.DataLoader]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">PGAN</span><span class="p">(</span>
+        <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span>
+        <span class="n">latent_size</span><span class="o">=</span><span class="n">latent_size</span><span class="p">,</span>
+        <span class="n">final_res</span><span class="o">=</span><span class="n">final_res</span><span class="p">,</span>
+        <span class="n">activation_f</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="n">negative_slope</span><span class="o">=</span><span class="n">negative_slope</span><span class="p">),</span>
+        <span class="n">alpha_step</span><span class="o">=</span><span class="n">alpha_step</span><span class="p">,</span>
+        <span class="n">loss_f</span><span class="o">=</span><span class="n">WGANGP_loss</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="n">device</span>
+    <span class="p">)</span>
+
+    <span class="n">dataloader</span> <span class="o">=</span> <span class="n">create_data_loader</span><span class="p">(</span><span class="n">input_dir</span><span class="o">=</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataloader</span></div>
+
+
+<div class="viewcode-block" id="train_model"><a class="viewcode-back" href="../../../../pgan_dl.pipelines.model_training.html#pgan_dl.pipelines.model_training.nodes.train_model">[docs]</a><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">:</span> <span class="n">PGAN</span><span class="p">,</span>
+    <span class="n">dataloader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span>
+    <span class="n">max_epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">checkpoint_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">loger_entity</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">loger_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">PGAN</span><span class="p">,</span> <span class="n">DataLoader</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Trains the model</span>
+<span class="sd">    :param model: Model object created with initialize()</span>
+<span class="sd">    :type model: PlacesModel</span>
+<span class="sd">    :param dataloader: Pytorch dataloader which handles training data</span>
+<span class="sd">    :type dataloader: torch.utils.data.DataLoader</span>
+<span class="sd">    :param max_epochs: Max number of epochs</span>
+<span class="sd">    :type max_epochs: number</span>
+<span class="sd">    :param checkpoint_path: Path to directory in which to save model checkpoints</span>
+<span class="sd">    :type checkpoint_path: str</span>
+<span class="sd">    :param loger_entity: WandDB entity name</span>
+<span class="sd">    :type loger_entity: str</span>
+<span class="sd">    :param loger_name: WandDB loger name</span>
+<span class="sd">    :type loger_name: str</span>
+
+<span class="sd">    :return: A trained model alongside dataloader</span>
+<span class="sd">    :rtype: Tuple[PGAN, torch.utils.data.DataLoader]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#wandb.init()</span>
+    <span class="n">wandb_logger</span> <span class="o">=</span> <span class="n">WandbLogger</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s2">&quot;PGAN&quot;</span><span class="p">,</span>  <span class="n">entity</span><span class="o">=</span><span class="n">loger_entity</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">loger_name</span><span class="p">)</span>
+    <span class="n">gpu_devices</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">Trainer</span><span class="p">(</span>
+        <span class="n">gpus</span><span class="o">=</span><span class="n">gpu_devices</span><span class="p">,</span>
+        <span class="n">precision</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+        <span class="n">max_epochs</span><span class="o">=</span><span class="n">max_epochs</span><span class="p">,</span>
+        <span class="n">logger</span><span class="o">=</span><span class="n">wandb_logger</span><span class="p">,</span>
+        <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">pl</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">ModelCheckpoint</span><span class="p">(</span><span class="n">dirpath</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataloader</span><span class="p">)</span>
+
+    <span class="n">wandb</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataloader</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

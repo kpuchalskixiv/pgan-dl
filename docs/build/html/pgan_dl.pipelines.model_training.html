@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pgan_dl.pipelines.model_training package &mdash; pgan_dl 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/qb1-sphinx-rtd.css" type="text/css" />
+  <link rel="stylesheet" href="/home/kacper/anaconda3/envs/pgan/lib/python3.9/site-packages/kedro/framework/html/_static/css/theme-overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pgan_dl.src package" href="pgan_dl.src.html" />
+    <link rel="prev" title="pgan_dl.pipelines.model_evaluation package" href="pgan_dl.pipelines.model_evaluation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pgan_dl
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pgan_dl</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pgan_dl.html">pgan_dl package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pgan_dl.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pgan_dl.pipelines.html">pgan_dl.pipelines package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pgan_dl.src.html">pgan_dl.src package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pgan_dl.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pgan_dl.html#module-pgan_dl.pipeline_registry">pgan_dl.pipeline_registry module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pgan_dl.html#module-pgan_dl.settings">pgan_dl.settings module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pgan_dl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">pgan_dl</a> &raquo;</li>
+        
+          <li><a href="pgan_dl.html">pgan_dl package</a> &raquo;</li>
+        
+          <li><a href="pgan_dl.pipelines.html">pgan_dl.pipelines package</a> &raquo;</li>
+        
+      <li>pgan_dl.pipelines.model_training package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-pgan_dl.pipelines.model_training">
+<span id="pgan-dl-pipelines-model-training-package"></span><h1>pgan_dl.pipelines.model_training package<a class="headerlink" href="#module-pgan_dl.pipelines.model_training" title="Permalink to this headline">¶</a></h1>
+<p>This is a boilerplate pipeline ‘model_training’
+generated using Kedro 0.18.1</p>
+<dl class="py function">
+<dt id="pgan_dl.pipelines.model_training.create_pipeline">
+<code class="sig-prename descclassname">pgan_dl.pipelines.model_training.</code><code class="sig-name descname">create_pipeline</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/pipelines/model_training/pipeline.html#create_pipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.pipelines.model_training.create_pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pgan_dl.pipelines.model_training.nodes">
+<span id="pgan-dl-pipelines-model-training-nodes-module"></span><h2>pgan_dl.pipelines.model_training.nodes module<a class="headerlink" href="#module-pgan_dl.pipelines.model_training.nodes" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pgan_dl.pipelines.model_training.nodes.create_data_loader">
+<code class="sig-prename descclassname">pgan_dl.pipelines.model_training.nodes.</code><code class="sig-name descname">create_data_loader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_dir</span></em>, <em class="sig-param"><span class="n">batch_size</span></em>, <em class="sig-param"><span class="n">num_workers</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/pipelines/model_training/nodes.html#create_data_loader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.pipelines.model_training.nodes.create_data_loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates pytorch data loader from places365 dataset
+:type input_dir: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param input_dir: Path to the root of the dataset
+:type input_dir: str
+:type batch_size: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param batch_size: Number of images in a batch
+:type batch_size: int
+:type num_workers: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param num_workers: How many subprocesses are used for data loading
+:type num_workers: int
+:return: Data loader for the dataset
+:rtype: torch.utils.data.DataLoader</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.pipelines.model_training.nodes.initialize">
+<code class="sig-prename descclassname">pgan_dl.pipelines.model_training.nodes.</code><code class="sig-name descname">initialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_dir</span></em>, <em class="sig-param"><span class="n">latent_size</span></em>, <em class="sig-param"><span class="n">final_res</span></em>, <em class="sig-param"><span class="n">negative_slope</span></em>, <em class="sig-param"><span class="n">alpha_step</span></em>, <em class="sig-param"><span class="n">batch_size</span></em>, <em class="sig-param"><span class="n">lr</span></em>, <em class="sig-param"><span class="n">num_workers</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/pipelines/model_training/nodes.html#initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.pipelines.model_training.nodes.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes neural network for solving classification problem on Places365 dataset
+:type input_dir: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param input_dir: Path to the split dataset.
+:type input_dir: str
+:type latent_size: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param latent_size: A latent size of a model.
+:type latent_size: int
+:type final_res: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param final_res: A resolution of the generated image.
+:type final_res: int
+:type negative_slope: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>
+:param negative_slope: A hyperparam of the LeakyReLU activation function.
+:type negative_slope: float
+:type alpha_step: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>
+:param alpha_step: A alpha_step of the model
+:type alpha_step: float
+:type batch_size: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param batch_size: Number of images in a batch.
+:type batch_size: int
+:type lr: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>
+:param lr: Learning rate for model’s optimizer.
+:type lr: float
+:type num_workers: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param num_workers: How many subprocesses are used for data loading.
+:type num_workers: int
+:return: Model object alongside train, validation, test data loaders
+:rtype: Tuple[PGAN, torch.utils.data.DataLoader]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pgan_dl.pipelines.model_training.nodes.train_model">
+<code class="sig-prename descclassname">pgan_dl.pipelines.model_training.nodes.</code><code class="sig-name descname">train_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">dataloader</span></em>, <em class="sig-param"><span class="n">max_epochs</span></em>, <em class="sig-param"><span class="n">checkpoint_path</span></em>, <em class="sig-param"><span class="n">loger_entity</span></em>, <em class="sig-param"><span class="n">loger_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/pipelines/model_training/nodes.html#train_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.pipelines.model_training.nodes.train_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trains the model
+:type model: <a class="reference internal" href="pgan_dl.src.html#pgan_dl.src.model.PGAN" title="pgan_dl.src.model.PGAN"><code class="xref py py-class docutils literal notranslate"><span class="pre">PGAN</span></code></a>
+:param model: Model object created with initialize()
+:type model: PlacesModel
+:type dataloader: <code class="xref py py-class docutils literal notranslate"><span class="pre">DataLoader</span></code>
+:param dataloader: Pytorch dataloader which handles training data
+:type dataloader: torch.utils.data.DataLoader
+:type max_epochs: <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>
+:param max_epochs: Max number of epochs
+:type max_epochs: number
+:type checkpoint_path: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param checkpoint_path: Path to directory in which to save model checkpoints
+:type checkpoint_path: str
+:type loger_entity: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param loger_entity: WandDB entity name
+:type loger_entity: str
+:type loger_name: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+:param loger_name: WandDB loger name
+:type loger_name: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A trained model alongside dataloader</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple[<a class="reference internal" href="pgan_dl.src.html#pgan_dl.src.model.PGAN" title="pgan_dl.src.model.PGAN">PGAN</a>, torch.utils.data.DataLoader]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pgan_dl.pipelines.model_training.pipeline">
+<span id="pgan-dl-pipelines-model-training-pipeline-module"></span><h2>pgan_dl.pipelines.model_training.pipeline module<a class="headerlink" href="#module-pgan_dl.pipelines.model_training.pipeline" title="Permalink to this headline">¶</a></h2>
+<p>This is a boilerplate pipeline ‘model_training’
+generated using Kedro 0.18.1</p>
+<dl class="py function">
+<dt id="pgan_dl.pipelines.model_training.pipeline.create_pipeline">
+<code class="sig-prename descclassname">pgan_dl.pipelines.model_training.pipeline.</code><code class="sig-name descname">create_pipeline</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pgan_dl/pipelines/model_training/pipeline.html#create_pipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pgan_dl.pipelines.model_training.pipeline.create_pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pgan_dl.src.html" class="btn btn-neutral float-right" title="pgan_dl.src package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pgan_dl.pipelines.model_evaluation.html" class="btn btn-neutral float-left" title="pgan_dl.pipelines.model_evaluation package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright .
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+pgan\_dl.pipelines.model\_training package
+==========================================
+
+.. automodule:: pgan_dl.pipelines.model_training
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+pgan\_dl.pipelines.model\_training.nodes module
+-----------------------------------------------
+
+.. automodule:: pgan_dl.pipelines.model_training.nodes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pgan\_dl.pipelines.model\_training.pipeline module
+--------------------------------------------------
+
+.. automodule:: pgan_dl.pipelines.model_training.pipeline
+   :members:
+   :undoc-members:
+   :show-inheritance:
