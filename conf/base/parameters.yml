@@ -12,3 +12,5 @@ checkpoint_path: data/06_models/
 loger_entity: dl_image_classification
 loger_name: locally_airplanes
 generated_samples_no: 10
+load_model: False
+model_path: data/06_models/no_img_norm_32.ckpt

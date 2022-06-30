@@ -11,7 +11,7 @@ def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
         node(
             evaluate,
-            ["trained_model", "train_dataloader", "params:generated_samples_no","params:batch_size"],
+            ["params:model_path", "params:input_dir", "params:generated_samples_no","params:batch_size", "params:num_workers"],
             ["fid"],
             name='evaluate_model'
         )

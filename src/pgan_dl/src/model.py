@@ -1,7 +1,7 @@
 import pytorch_lightning as pl
 import random
 
-from my_pgan import *
+from .my_pgan import *
 
 
 class PGAN(pl.LightningModule):
