@@ -127,15 +127,13 @@ def evaluate(model_path: str, input_dir: str, generated_samples_no: int, batch_s
     :param batch_size: Number of images in a batch
     :type batch_size: int
     """
-    model=PGAN_loaded.load_from_checkpoint(checkpoint_path=model_path)
+    model=PGAN_loaded.load_from_checkpoint(checkpoint_path=model_path, device=device)
     dataloader = create_data_loader(input_dir=input_dir, batch_size=batch_size, num_workers=num_workers)
 
     model.to(device)
     model.generator.to(device)
     model.generator.eval()
     inception = prepare_inception_embedder()
-
-    #batch_size = 4
 
     # compute embeddings for real images
     real_image_embeddings = compute_embeddings(inception, dataloader)
