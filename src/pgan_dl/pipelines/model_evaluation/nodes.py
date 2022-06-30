@@ -1,7 +1,9 @@
 from torchvision import transforms
+import torchvision as tv
+import torch.utils.data as data_utils
 import torch
 from torch.utils.data import DataLoader, Dataset
-from ...src.model import PGAN
+from ...src.model import PGAN, PGAN_loaded
 import numpy as np
 from torch import nn
 from tqdm import tqdm
@@ -81,8 +83,39 @@ def prepare_inception_embedder():
     model.eval()
     return model
 
+def create_data_loader(input_dir: str, batch_size: int, num_workers: int) -> DataLoader:
+    """
+    Creates pytorch data loader from places365 dataset
+    :param input_dir: Path to the root of the dataset
+    :type input_dir: str
+    :param batch_size: Number of images in a batch
+    :type batch_size: int
+    :param num_workers: How many subprocesses are used for data loading
+    :type num_workers: int
+    :return: Data loader for the dataset
+    :rtype: torch.utils.data.DataLoader
+    """
 
-def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int):
+    data_train = DataLoader(
+        tv.datasets.CIFAR10(input_dir, transform=transforms.ToTensor()),
+        batch_size=batch_size, num_workers=num_workers
+    )
+
+    oneclass_data = []
+    for d in data_train:
+        data, labels = d
+        for l in range(len(labels)):
+            if labels[l] == 0:
+                oneclass_data.append(data[l].view(1, 3, 32, 32))
+
+    return DataLoader(
+        data_utils.TensorDataset(torch.cat(oneclass_data, dim=0), torch.zeros(len(oneclass_data))),
+        batch_size=batch_size, num_workers=num_workers, shuffle=False
+    )
+
+
+#def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int, batch_size: int):
+def evaluate(model_path: str, input_dir: str, generated_samples_no: int, batch_size: int, num_workers: int):
     """Computes a FID score on given dataset
 
     :param model: pre-trained PGAN model
@@ -91,13 +124,16 @@ def evaluate(model: PGAN, dataloader: DataLoader, generated_samples_no: int):
     :type dataloader: torch.utils.data.DataLoader
     :param generated_samples_no: number of samples to be generated and used for evaluation
     :type generated_samples_no: int
+    :param batch_size: Number of images in a batch
+    :type batch_size: int
     """
+    model=PGAN_loaded.load_from_checkpoint(checkpoint_path=model_path, device=device)
+    dataloader = create_data_loader(input_dir=input_dir, batch_size=batch_size, num_workers=num_workers)
+
     model.to(device)
     model.generator.to(device)
     model.generator.eval()
     inception = prepare_inception_embedder()
-
-    batch_size = 64
 
     # compute embeddings for real images
     real_image_embeddings = compute_embeddings(inception, dataloader)

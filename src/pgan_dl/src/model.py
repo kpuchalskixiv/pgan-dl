@@ -11,7 +11,7 @@ class PGAN(pl.LightningModule):
                  device='cuda', normalize_img=True):
 
         super().__init__()
-        self.save_hyperparameters()
+        self.save_hyperparameters(ignore=['activation_f'])
 
         self.id = f"{random.random():.3f}"[2:]
         self.loss_f = loss_f
@@ -89,15 +89,12 @@ class PGAN(pl.LightningModule):
                 # call the closure by itself to run `training_step` + `backward` without an optimizer step
                 optimizer_closure()
 
-    def save_generated_images(self, n=10, save_dir='./images/'):
-        t = transforms.Compose([transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+    def save_generated_images(self, n=10):
+        t = transforms.Compose([#transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
                                 transforms.ToPILImage()])  # , transforms.Resize(size=(256,256))])
         zi = torch.randn(n, self.hparams.latent_size)
         gen_imgs = self.generator(zi)
-        i = 0
-        for img in gen_imgs:
-            t(img).save(save_dir + self.id + '_res_' + str(self.hparams.curr_res) + '_img_' + str(i) + '.png')
-            i += 1
+        wandb.log({"examples_"+ str(self.hparams.curr_res) : [wandb.Image(image) for image in gen_imgs]})
 
     def on_train_epoch_end(self):
         if self.current_epoch > int(
@@ -164,3 +161,4 @@ class PGAN_loaded(PGAN):
             resolution *= 2
         if self.hparams.alpha == 0:
             self.generator.finish_adding_scale()
+            self.discriminator.finish_adding_scale()
