@@ -43,7 +43,7 @@ def create_data_loader(input_dir: str, batch_size: int, num_workers: int) -> Dat
 
     return DataLoader(
         data_utils.TensorDataset(torch.cat(oneclass_data, dim=0), torch.zeros(len(oneclass_data))),
-        batch_size=batch_size, num_workers=num_workers
+        batch_size=batch_size, num_workers=num_workers, shuffle=True
     )
 
 
